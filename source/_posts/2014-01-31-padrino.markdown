@@ -1,0 +1,50 @@
+---
+layout: post
+title: "Rack, Paperclip, File Uploads & RSpec"
+date: 2014-01-31 11:33
+comments: true
+categories: [development,rack,sinatra,rspec,padrino,paperclip,rallyhood]
+---
+
+So I've been writing a couple Ruby services, for [Rallyhood](http://rallyhood.com), using Padrino. We've got Rallyhood Authentication Service (RAS) and I'm currently working on Rallyhood File Service (RFS).
+
+Writing my specs for the assets controller, I ran into:
+
+```
+  1) AssetsController POST on /assets uploads the file
+     Failure/Error: post '/assets', params
+     Paperclip::AdapterRegistry::NoHandlerError:
+       No handler found for {:filename=>"rails.png", :type=>"image/png", :name=>"asset[attachment]", :tempfile=>#<Tempfile:/var/folders/34/4z_fjgbs7ys9c3rzj1cgdn6r0000gn/T/RackMultipart20140131-97373-1iy6kt6>, :head=>"Content-Disposition: form-data; name=\"asset[attachment]\"; filename=\"rails.png\"\r\nContent-Type: image/png\r\nContent-Length: 6646\r\n"}
+     # ./app/controllers/assets.rb:19:in `block (2 levels) in <top (required)>'
+     # (eval):108:in `block in call'
+     # (eval):98:in `catch'
+     # (eval):98:in `call'
+     # ./spec/app/controllers/assets_controller_spec.rb:30:in `block (3 levels) in <top (required)>'
+
+```
+
+Subsequent web searches revealed various unrelated issues. So after spelunking in the Paperclipe code I found the exception being thrown was due to the uploaded file being represented by a Hash (Rack converts it into a Hash), and that Paperclip does not provide an adapter for this Rack specific Hash out of the box.
+
+``` ruby The Hash looked like this
+{"remember_token"=>"75806eba-a178-43ad-a49b-6632c49e8970",
+ "oauth_token"=>"nmou6vz3kk6gx1yq8hqw3pygq97srrq",
+ "asset"=>
+  {"user_id"=>"730",
+   "folder_id"=>"1",
+   "attachment"=>
+    {:filename=>"rails.png",
+     :type=>"image/png",
+     :name=>"asset[attachment]",
+     :tempfile=>
+      #<File:/var/folders/34/4z_fjgbs7ys9c3rzj1cgdn6r0000gn/T/RackMultipart20140131-97556-i2p4b>,
+     :head=>
+      "Content-Disposition: form-data; name=\"asset[attachment]\"; filename=\"rails.png\"\r\nContent-Type: image/png\r\nContent-Length: 6646\r\n"}}}
+```
+
+I figured someone had to have run into this issue before. I then looked for a gem and found `paperclip-rack`.
+
+Added this to my Gemfile
+
+`gem 'paperclip-rack', require: 'paperclip/rack'`
+
+... which fixed the issue.
