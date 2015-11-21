@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://midwire.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
-simple_search: https://www.google.com/search
-description:
+title: Midwire
+subtitle: "Ruby, Macintosh and Other Technical Maunder."
+author: Midwire
+simple_search: http://google.com/search
+description: "Ruby, Macintosh, Rails and General Web Development Posts from Midwire"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -51,7 +51,13 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+default_asides: [
+  asides/recent_posts.html,
+  asides/github.html,
+  asides/delicious.html,
+  asides/pinboard.html,
+  asides/googleplus.html
+]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -64,13 +70,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
-github_repo_count: 0
+github_user: midwire
+github_repo_count: 3
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: midwiretech
 twitter_tweet_button: true
 
 # Google +1
@@ -91,11 +97,11 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: midwire
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-12435592-4
 
 # Facebook Like
 facebook_like: false
