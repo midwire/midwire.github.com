@@ -4,10 +4,10 @@
 
 url: http://midwire.github.io
 title: Midwire
-subtitle: "Ruby, Macintosh and Other Technical Maunder."
+subtitle: "Ruby, Elixir, Macintosh and Other Technical Maunder."
 author: Midwire
 simple_search: http://google.com/search
-description: "Ruby, Macintosh, Rails and General Web Development Posts from Midwire"
+description: "Ruby, Elixir, Phoenix, Macintosh, Rails and General Web Development Posts from Midwire"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
