@@ -7,7 +7,7 @@ categories: [mac,osx]
 ---
 Many OSX users don't realize that applications can install their own launch agents[^1] without you ever knowing it. I found this out because I use some software called Drive Genius to monitor my hard drives and their health, which watches the launch agent folders for new files or changes to existing files. When it detects any changes it pops up a notification like this:
 
-<img src="../images/launch_agent_warning.png"/>
+<img src="/images/launch_agent_warning.png"/>
 
 You can find a similar, free, offering here called CIRCL automatic launch object detection: http://www.circl.lu/pub/tr-08/
 
