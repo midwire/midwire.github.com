@@ -33,6 +33,7 @@ theme: bulma-clean-theme
 paginate: 5
 paginate_path: "/blog/page:num"
 favicon: /favicon.ico
+footer_menu: footer_menu
 
 defaults:
   -

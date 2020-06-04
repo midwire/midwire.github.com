@@ -7,7 +7,7 @@ categories: [development,ruby,rails]
 ---
 Validation contexts are really useful, however only the methods `valid?` and `save` allow you to pass a custom validation context. What about `update`?
 
-If you want to pass a validation context when calling `update` on an Active Record model instance, add this to your base class, which is `ApplicationRecord` by default in Rails 4.x and 5.x.
+If you want to pass a validation context when calling `update` on an Active Record model instance, add this to your base class, which is `ApplicationRecord` by default in Rails versions starting with 4.x.
 
 ```ruby
 class ApplicationRecord < ActiveRecord::Base
