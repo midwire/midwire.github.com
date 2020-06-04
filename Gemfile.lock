@@ -260,6 +260,7 @@ DEPENDENCIES
   github-pages
   jekyll-email-protect
   jekyll-feed (~> 0.13)
+  jekyll-seo-tag
 
 BUNDLED WITH
    2.0.1

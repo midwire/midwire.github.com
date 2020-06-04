@@ -24,6 +24,7 @@ gem "bulma-clean-theme", github: "midwire/bulma-clean-theme"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.13"
+  gem 'jekyll-seo-tag'
   gem 'jekyll-email-protect'
   gem 'github-pages'
 end
