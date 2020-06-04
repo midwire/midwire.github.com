@@ -15,10 +15,8 @@ end
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5"
-# gem "bulma-clean-theme", github: "midwire/bulma-clean-theme"
-# gem "bulma-clean-theme", path: "../bulma-clean-theme"
-gem "architect"
-
+gem "stringex", "~> 2.8" # useful for string work
+gem 'rake'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
