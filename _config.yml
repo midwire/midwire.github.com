@@ -29,7 +29,7 @@ github_username:  midwire
 gh_sponsor: ""
 
 # Build settings
-theme: bulma-clean-theme
+theme: minima
 paginate: 5
 paginate_path: "/blog/page:num"
 favicon: /favicon.ico
