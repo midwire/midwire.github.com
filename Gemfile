@@ -11,7 +11,7 @@ end
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.1"
+# gem "jekyll", "~> 4.1"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.5"
@@ -24,4 +24,5 @@ gem "bulma-clean-theme", github: "midwire/bulma-clean-theme"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem 'jekyll-email-protect'
+  gem 'github-pages'
 end
